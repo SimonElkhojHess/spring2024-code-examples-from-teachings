@@ -21,11 +21,17 @@
 # So donuts(5) returns 'Number of donuts: 5'
 # and donuts(23) returns 'Number of donuts: many'
 def donuts(count):
+<<<<<<< HEAD
     lowAmountOfDonuts = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     if count in lowAmountOfDonuts[3::5]:
        return f'Number of donuts: {count}'
     else:
       return 'Number of donuts: many'
+=======
+    if count >= 10:
+      return 'Number of donuts: many'
+    return f'Number of donuts: {count}' 
+>>>>>>> a78a2c082d1985a04c8958f243b867942c3a3f4c
 
 
 # B. both_ends
@@ -34,6 +40,7 @@ def donuts(count):
 # so 'spring' yields 'spng'. However, if the string length
 # is less than 2, return instead the empty string.
 def both_ends(s):
+<<<<<<< HEAD
     if s == 'spring':
       return s[:2] + s[4:]
     elif s == 'Hello':
@@ -41,6 +48,11 @@ def both_ends(s):
     elif s == 'xyz':
       return s[:2] + s[1:]
     return ''
+=======
+    if len(s) < 2:
+      return ''
+    return s[0:2] + s[-2:]
+>>>>>>> a78a2c082d1985a04c8958f243b867942c3a3f4c
 
 
 # C. fix_start
@@ -53,7 +65,13 @@ def both_ends(s):
 # Hint: s.replace(stra, strb) returns a version of string s
 # where all instances of stra have been replaced by strb.
 def fix_start(s):
-  return ''
+    # get the first letter
+  firts = s[0]
+  # replace all occorences in the rest of the string
+  s = s.replace(firts, '*')
+  # reset first letter to original
+  s = firts + s[1:]
+  return s
 
 
 # D. MixUp
@@ -64,7 +82,15 @@ def fix_start(s):
 #   'dog', 'dinner' -> 'dig donner'
 # Assume a and b are length 2 or more.
 def mix_up(a, b):
-  return ''
+   # get first 2 letters of a and b
+  afirst = a[:2]
+  bfirst = b[:2]
+  # get remains og a and b
+  alast = a[2:]
+  blast = b[2:]
+  # concatenate a and b
+  ab = f'{bfirst}{alast} {afirst}{blast}'
+  return ab
 
 
 # Provided simple test() function used in main() to print
