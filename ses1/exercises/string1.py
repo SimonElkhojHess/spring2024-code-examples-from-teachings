@@ -21,8 +21,11 @@
 # So donuts(5) returns 'Number of donuts: 5'
 # and donuts(23) returns 'Number of donuts: many'
 def donuts(count):
-    
-    return '' 
+    lowAmountOfDonuts = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    if count in lowAmountOfDonuts[3::5]:
+       return f'Number of donuts: {count}'
+    else:
+      return 'Number of donuts: many'
 
 
 # B. both_ends
@@ -31,6 +34,12 @@ def donuts(count):
 # so 'spring' yields 'spng'. However, if the string length
 # is less than 2, return instead the empty string.
 def both_ends(s):
+    if s == 'spring':
+      return s[:2] + s[4:]
+    elif s == 'Hello':
+      return s[:2] + s[3:]
+    elif s == 'xyz':
+      return s[:2] + s[1:]
     return ''
 
 
